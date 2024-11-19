@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>صفحة المعلومات</title>
+    <style>
+        @font-face {
+            font-family: 'Roboto';
+            src: url('https://fonts.gstatic.com/s/roboto/v32/KFOlCnqEu92Fr1MmSU5fCRc4EsA.woff2') format('woff2');
+            font-weight: normal;
+            font-style: normal;
+        }
+
+        body {
+            font-family: 'Roboto', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f9f9f9;
+            text-align: center;
+        }
+
+        header {
+            padding: 20px;
+            background-color: #fff;
+            border-bottom: 1px solid #ccc;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 20px;
+        }
+
+        /* إضافة الصورة في بداية الصفحة */
+        header img {
+            height: 150px; /* يمكنك تعديل الحجم هنا حسب الحاجة */
+            width: auto;
+        }
+
+        h1 {
+            font-size: 24px;
+            margin: 10px 0;
+        }
+
+        p {
+            font-weight: bold; /* جعل النص سميك */
+            font-size: 20px; /* تغيير حجم النص */
+            margin: 20px 0;
+        }
+
+        table {
+            margin: 20px auto;
+            border-collapse: collapse;
+            width: 80%;
+            background-color: #fff;
+            box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        table th, table td {
+            border: 1px solid #ddd;
+            padding: 10px;
+            text-align: right;
+        }
+
+        table th {
+            background-color: #f4f4f4;
+        }
+
+        #qrcode {
+            margin-top: 20px;
+        }
+    </style>
+    <script src="https://cdn.jsdelivr.net/npm/qrcode/build/qrcode.min.js"></script>
+</head>
+<body>
+    <header>
+        <!-- إضافة الصورة في بداية الصفحة -->
+        <img src="file:///C:/Users/ProgEdit/Desktop/page/main logo.png" alt="الشعار المدمج">
+    </header>
+
+    <h1>جمهورية العراق</h1>
+    <p>استمارة إلكترونية خاصة بمنح الباجات للمؤسسات الإعلامية والصحفيين</p>
+
+    <table>
+        <tr>
+            <th>الاسم الكامل</th>
+            <td>فؤاد خليل محمد حسن</td>
+        </tr>
+        <tr>
+            <th>اللقب</th>
+            <td>زنكنة</td>
+        </tr>
+        <tr>
+            <th>الجنس</th>
+            <td>ذكر</td>
+        </tr>
+        <tr>
+            <th>تاريخ الميلاد</th>
+            <td>1986-11-15</td>
+        </tr>
+        <tr>
+            <th>اسم الأم</th>
+            <td>مديحة عيسى رؤوف</td>
+        </tr>
+        <tr>
+            <th>رقم الباج</th>
+            <td>pGsZhGjtkFHRLJ</td>
+        </tr>
+        <tr>
+            <th>رقم البطاقة الوطنية</th>
+            <td>198686371919</td>
+        </tr>
+        <tr>
+            <th>تاريخ إصدار الهوية الوطنية</th>
+            <td>2022-03-31</td>
+        </tr>
+        <tr>
+            <th>المحافظة</th>
+            <td>بغداد</td>
+        </tr>
+        <tr>
+            <th>المؤسسة الاعلامية</th>
+            <td>قناة الاولى الفضائية</td>
+        </tr>
+    </table>
+
+    <div id="qrcode"></div>
+
+    <script>
+        // توليد QR Code
+        QRCode.toCanvas(document.getElementById('qrcode'), window.location.href, function (error) {
+            if (error) console.error(error);
+            console.log('تم إنشاء QR Code!');
+        });
+    </script>
+</body>
+</html>
